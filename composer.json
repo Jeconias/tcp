@@ -1,0 +1,19 @@
+{
+    "name": "sanjos/tcp",
+    "description": "Client and server using TCP protocol.",
+    "autoload": {
+        "psr-4": {
+            "Sanjos\\" : "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeconias Santos",
+            "email": "jeconiass2009@hotmail.com"
+        }
+    ]
+}

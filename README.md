@@ -1,2 +1,2 @@
-# tcp
-Transfer images using TCP protocol
+# TCP
+Transfer images using TCP protocol.
