@@ -5,7 +5,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(0);
 
-use \Sanjos\TCP\ClientTCP;
+use \Sanjos\Socket\Client;
 use \Sanjos\Exception\ErrorSocketException;
 
 //$value = $_POST['search'] ?? null;
@@ -13,8 +13,8 @@ use \Sanjos\Exception\ErrorSocketException;
 
 try{
 
-    $client = ClientTCP::createSocket(ClientTCP::TCP, '127.0.0.1');
-    $client->sendMessage('gato');
+    $client = Client::createSocket(Client::TCP, '127.0.0.1');
+    $client->sendMessage('gataao');
     $client->start();
 
 }catch(ErrorSocketException $e){
