@@ -3,13 +3,12 @@
 namespace Sanjos\Socket;
 use \Sanjos\Exception\{ArgumentInvalidException, ErrorSocketException};
 
-class Client {
+class ClientUDP {
 
     private $clientSocket   = null;
     private $messageToSend  = [];
 
-    private const PROTOCOLS = [SOL_TCP, SOL_UDP];
-    public const TCP = SOL_TCP;
+    private const PROTOCOLS = [SOL_UDP];
     public const UDP = SOL_UDP;
 
 
@@ -18,7 +17,7 @@ class Client {
         $this->ip   = $ip;
         $this->port = $port;
 
-        if(!in_array($protocol, Client::PROTOCOLS)) throw ArgumentInvalidException::show('Tipo de protocolo não habilitado.');
+        if(!in_array($protocol, ClientUDP::PROTOCOLS)) throw ArgumentInvalidException::show('Tipo de protocolo não habilitado.');
         
         $this->clientSocket = socket_create($domain, $type, $protocol);
 
@@ -28,7 +27,7 @@ class Client {
 
     public static function createSocket(int $domain, int $type, int $protocol, string $ip, int $port = 1717) : self
     {
-        return new Client($domain, $type, $protocol, $ip, $port);
+        return new ClientUDP($domain, $type, $protocol, $ip, $port);
     }
 
     public function start() : void
